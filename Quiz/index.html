@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz project</title>
+
+    <meta name="description" content="A Quiz that will generate questions for user to take.">
+
+    <meta property="og:title" content="A Quiz">
+    <meta property="og:description" content="Try this quiz and check your knowledge now !!!">
+    <meta property="og:img" content="Quiz.png">
+    <meta property="og:url" content="localhost">
+
+    <link rel="icon" href="Quiz.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container" id="quiz-container">
+        <div id="startScreen">
+            <div id="quiz-board" class="screen">
+                <h1 class="quiz-title">Quiz Time !</h1>
+                <p class="description">Test your knowledge</p>
+                <button id="start">Start Quiz</button>
+            </div>
+        </div>
+        
+        <div id="quizing">
+            <div id="question-board" class="screen">
+                <h2 id="question">Question</h2>
+                <div class="quiz-info">
+                    <p>Question 
+                        <span id="current-question">#</span>
+                        of 
+                        <span id="total-question">5</span>
+                    </p>
+                    <p>Score: <span id="current-score">#</span></p>
+                </div>
+                <div class="select-section">
+                    <button class="answers">q1</button>
+                    <button class="answers">q2</button>
+                    <button class="answers">q3</button>
+                    <button class="answers">q4</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="resultScreen">
+            <div id="result-screen" class="screen">
+                <h1>Quiz Results</h1>
+                <div class="result-info">
+                    <p>You scored 
+                        <span id="final-score">0</span>
+                        out of 
+                        <span id="max-score">5</span>
+                    </p>
+                    <div id="result-message">Good job!</div>
+                </div>
+                <button id="restart">Restart Quiz</button>
+            </div>
+        </div>
+        </div>
+        
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
