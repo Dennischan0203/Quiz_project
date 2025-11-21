@@ -9,9 +9,10 @@ const startButton = document.getElementById('start');
 
 startButton.addEventListener('click', gotoQuestions);
 
-let question_no = 0;
+let questionNO = 0;
 let progress_bar = 0;
-let score = 0;
+let totalScore = 0;
+const totalQuestions = 5;
 
 class Quiz{
     constructor(title, answers){
@@ -25,19 +26,6 @@ class Quiz{
             answers.splice(r_num,1);
             length--;
         };
-
-        /*r_num = Math.floor(Math.random()*4);
-        this.answer1 = answers[r_num];
-        answers.splice(r_num,1);
-        r_num = Math.floor(Math.random()*3);
-        this.answer2 = answers[r_num];
-        answers.splice(r_num,1);
-        r_num = Math.floor(Math.random()*2);
-        this.answer3 = answers[r_num];
-        answers.splice(r_num,1);
-        r_num = Math.floor(Math.random()*1);
-        this.answer4 = answers[r_num];
-        answers.splice(r_num,1);*/
     }
 }
 
@@ -48,7 +36,7 @@ function gotoQuestions(){
     const total_question = document.getElementById('total-question');
     const score = document.getElementById('current-score');
     const bar = document.querySelector('div.progress');
-    const q1 = new Quiz("What is Question1",['1','2','3','4']);
+    const q1 = new Quiz("What is XXXX",['1','2','3','4']);
     question.textContent = q1.title;
     const fragment = document.createDocumentFragment();
     for (let i = 0; i < q1.answers.length; i++) {
@@ -58,8 +46,9 @@ function gotoQuestions(){
         fragment.appendChild(a);
     }
     document.querySelector('div.select-section').appendChild(fragment);
-    /*a1.textContent = q1.answer1;
-    a2.textContent = q1.answer2;
-    a3.textContent = q1.answer3;
-    a4.textContent = q1.answer4;*/
+    question_no.textContent = questionNO;
+    questionNO++;
+    total_question.textContent = totalQuestions;
+    score.textContent = totalScore;
+    bar.className = 'progress0';
 }
