@@ -132,32 +132,32 @@ body{
     width: 0%;
     transition: width 0.3s ease;
 }
-.progress0{
+#progress0{
     height: 100%;
     background-color: rgb(245, 136, 97);
     width: 0%;
     transition: width 0.3s ease;
 }
 
-.progress25{
+#progress25{
     height: 100%;
     background-color: rgb(245, 136, 97);
     width: 25%;
     transition: width 0.3s ease;
 }
-.progress50{
+#progress50{
     height: 100%;
     background-color: rgb(245, 136, 97);
     width: 50%;
     transition: width 0.3s ease;
 }
-.progress75{
+#progress75{
     height: 100%;
     background-color: rgb(245, 136, 97);
     width: 75%;
     transition: width 0.3s ease;
 }
-.progress100{
+#progress100{
     height: 100%;
     background-color: rgb(245, 136, 97);
     width: 100%;
