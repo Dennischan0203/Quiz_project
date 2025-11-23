@@ -73,13 +73,9 @@ async function createQuiz() {
     const quizData = await getQuiz(); // wait for the data
     if (!quizData) return; // exit if there was an error
     if (quiz_completed.includes(quizData.quiz[0].question)){
-        console.log(quizData.quiz[0])
-        console.log('current: ' + quizData.quiz[0].question)
-        console.log('same quiz');
         return await createQuiz();
     }else{
         quiz_completed.push(quizData.quiz[0].question);
-        console.log(quizData.quiz[0])
     }
         
     const q = new Quiz(
@@ -135,6 +131,32 @@ async function nextQuestion(q){
 
 async function gotoResult(){
     quizContainer.innerHTML = quizResult.innerHTML;
+    const final_score = document.querySelector('#final-score');
+    const max_score = document.querySelector('#max-score');
+    const result_message = document.querySelector('#result-message');
+    final_score.textContent = totalScore;
+    max_score.textContent = totalQuestions;
+    switch(totalScore){
+        case 0:
+            result_message.textContent = 'Try it again!';
+            break;
+        case 1:
+            case 0:
+            result_message.textContent = 'Nice Try!';
+            break;
+        case 2:
+            result_message.textContent = 'Not bad!';
+            break;
+        case 3:
+            result_message.textContent = 'Good job!';
+            break;
+        case 4:
+            result_message.textContent = 'Awesome!';
+            break;
+        case 5:
+            result_message.textContent = 'Impressive !!! You nailed it !';
+            break;
+    }
     const restart = document.querySelector('#restart');
     restart.addEventListener('click',async()=>{
         questionNO = 1;
