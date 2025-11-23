@@ -11,7 +11,8 @@ quizContainer.innerHTML = startQuiz.innerHTML;
 const startButton = document.getElementById('start');
 
 class Quiz{
-    constructor(title, answers, correct_answer){
+    constructor(id, title, answers, correct_answer){
+        this.id = id;
         this.title = title;
         let r_num;
         let correctANS;
@@ -44,6 +45,7 @@ let questionNO = 1;
 let progress_bar = 0;
 let totalScore = 0;
 const totalQuestions = 5;
+let quiz_completed = [];
 
 // Start the quiz
 startButton.addEventListener('click', async()=>{
@@ -70,7 +72,18 @@ async function getQuiz() {
 async function createQuiz() {
     const quizData = await getQuiz(); // wait for the data
     if (!quizData) return; // exit if there was an error
+    if (quiz_completed.includes(quizData.quiz[0].question)){
+        console.log(quizData.quiz[0])
+        console.log('current: ' + quizData.quiz[0].question)
+        console.log('same quiz');
+        return await createQuiz();
+    }else{
+        quiz_completed.push(quizData.quiz[0].question);
+        console.log(quizData.quiz[0])
+    }
+        
     const q = new Quiz(
+        quizData.quiz[0].id,
         quizData.quiz[0].question,
         [quizData.quiz[0].optionA, quizData.quiz[0].optionB, quizData.quiz[0].optionC, quizData.quiz[0].optionD],
         quizData.quiz[0].correctOption
@@ -126,6 +139,7 @@ async function gotoResult(){
     restart.addEventListener('click',async()=>{
         questionNO = 1;
         totalScore = 0;
+        quiz_completed = [];
         startTheQuiz();
     })
 }
