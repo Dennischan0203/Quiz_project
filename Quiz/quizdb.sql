@@ -15,9 +15,10 @@ CREATE TABLE IF NOT EXISTS questions (
 
 INSERT INTO questions (question, optionA, optionB, optionC, optionD, correctOption)
 VALUES
-("What is 2 + 2?", "3", "4", "5", "6", "B"),
+("Which of the following is the capital of France?", "Toyko", "Paris", "Kenya", "Hong Kong", "B"),
 ("Which planet is closest to the sun?", "Earth", "Venus", "Mercury", "Mars", "C"),
-("What is 10 + 12?", "3", "4", "22", "6", "C"),
-("What is 25 + 52?", "3", "4", "5", "77", "D"),
-("Which of the following is a programming language?", "C++", "Piefun", "Razor", "Mars", "A"),
-("What is 22 + 22?", "3", "44", "5", "6", "B");
+("Which of the following is the capital of Japan?", "Toyko", "Paris", "Kenya", "Hong Kong", "A"),
+("What is 25 + 52?", "36", "45", "52", "77", "D"),
+("Which of the following is a programming language?", "C++", "Piefun", "Razor", "React", "A"),
+("Which of the following is a programming language?", "Java", "Laravel", "Express", "React", "A"),
+("What is 22 + 22/2?", "44", "33", "22", "55", "B");
