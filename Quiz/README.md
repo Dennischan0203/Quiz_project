@@ -3,7 +3,6 @@
 ## Features
 - Interactive quiz interface
 - Score tracking
-- Responsive
 - Real-time feedback
 
 ## Tech Stack
