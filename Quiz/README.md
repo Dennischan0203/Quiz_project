@@ -22,7 +22,7 @@ Make sure you have installed Node and MySQL
 ```bash
 git clone https://github.com/Dennischan0203/Quiz_project.git
 cd Quiz
-mysql -u username -p
+mysql -u root -p
 SOURCE quizdb.sql;
 quit
 npm install
